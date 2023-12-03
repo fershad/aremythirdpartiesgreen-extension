@@ -1,0 +1,30 @@
+.invoice h1 {
+  margin-bottom: 0;
+}
+
+.invoice {
+  line-height: 1.75;
+}
+
+.invoice .item,
+.invoice .subtotal,
+.invoice .total {
+  max-width: min(75ch, 100%);
+  padding: var(--size-300) 0;
+}
+
+.invoice .subtotal p {
+  margin-bottom: 0;
+}
+
+.invoice .item {
+  border-bottom: 1px solid currentColor;
+}
+
+.invoice .total {
+  border-top: thick double currentColor;
+}
+
+.invoice .item p {
+  margin-bottom: 0;
+}

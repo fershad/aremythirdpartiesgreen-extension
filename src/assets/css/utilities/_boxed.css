@@ -1,0 +1,70 @@
+.boxed {
+  flex: 1 1 var(--min);
+  padding: var(--size-300) var(--size-600);
+  border: 0.5px solid var(--color-dark);
+  /* border-radius: 5px; */
+  background: var(--boxed-background-color);
+  position: relative;
+}
+
+.boxed::before,
+.boxed::after {
+  content: "";
+  position: absolute;
+  height: var(--size-600);
+  width: var(--size-600);
+  display: block;
+}
+
+.boxed::before {
+  top: calc((var(--size-300) / 2) * -1);
+  left: calc((var(--size-300) / 2) * -1);
+  /*     background: var(--dark-green); */
+  /*     border-radius: 12px; */
+  border-top: calc((var(--size-300) / 2)) solid var(--box-color);
+  border-left: calc((var(--size-300) / 2)) solid var(--box-color);
+}
+
+.boxed::after {
+  bottom: calc((var(--size-300) / 2) * -1);
+  right: calc((var(--size-300) / 2) * -1);
+  /*     background: var(--dark-green); */
+  /*     border-radius: 12px; */
+  border-bottom: calc((var(--size-300) / 2)) solid var(--box-color);
+  border-right: calc((var(--size-300) / 2)) solid var(--box-color);
+}
+
+.boxed[data-box-color="dark"] {
+  --box-color: var(--color-primary-dark);
+}
+
+.boxed[data-box-color="light"] {
+  --box-color: var(--color-primary-light);
+}
+
+.boxed[data-box-color="accent"] {
+  --box-color: var(--color-accent);
+}
+
+.boxed[data-flipped]::before {
+  right: calc((var(--size-300) / 2) * -1);
+  left: initial;
+  /*     background: var(--dark-green); */
+  /*     border-radius: 12px; */
+  border-left: none;
+  border-right: calc((var(--size-300) / 2)) solid var(--box-color);
+}
+
+.boxed[data-flipped]::after {
+  left: calc((var(--size-300) / 2) * -1);
+  right: initial;
+  /*     background: var(--dark-green); */
+  /*     border-radius: 12px; */
+  border-right: none;
+  border-left: calc((var(--size-300) / 2)) solid var(--box-color);
+}
+
+.boxed img {
+  margin-left: auto;
+  margin-right: auto;
+}

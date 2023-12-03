@@ -1,0 +1,9 @@
+.card picture,
+.card img,
+.card figure {
+  aspect-ratio: 1;
+}
+
+.card .tags {
+  margin-bottom: var(--size-300);
+}

@@ -1,0 +1,33 @@
+ul.staggered-list > li {
+  flex-wrap: wrap;
+  /* justify-content: center; */
+}
+
+ul.staggered-list > li:nth-child(even) {
+  flex-direction: row;
+}
+
+@media (min-width: 36rem) {
+  ul.staggered-list > li {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    justify-content: space-between;
+  }
+
+  ul.staggered-list > li:nth-child(even) {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  ul.staggered-list li img {
+    display: inline-block;
+    height: 200px;
+    width: 300px;
+  }
+
+  ul.staggered-list li:nth-child(even) img {
+    height: 200px;
+    width: 300px;
+  }
+}

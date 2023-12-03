@@ -1,0 +1,23 @@
+blockquote {
+  border-left: 1rem solid var(--color-primary);
+  padding: var(--size-300) var(--size-400) var(--size-300) var(--size-500);
+  /* background: var(--color-primary); */
+  margin: var(--size-600) calc(var(--size-600) * -1) var(--size-600)
+    calc(var(--size-600) * -1);
+  font-style: italic;
+  color: currentColor;
+}
+
+@media (min-width: 48rem) {
+  blockquote {
+    margin: var(--size-600);
+  }
+}
+
+.full-width blockquote {
+  margin-left: 0;
+}
+
+blockquote[data-style="regular"] {
+  font-style: normal;
+}

@@ -1,0 +1,29 @@
+summary {
+  font-size: var(--size-600);
+  padding-inline-start: var(--size-300);
+}
+
+details p {
+  padding-inline: var(--size-400);
+  padding-block-end: var(--size-400);
+  margin: var(--size-300) 0;
+}
+
+details[open] > summary {
+  background-color: var(--color-primary-dark);
+  color: var(--light-text);
+}
+
+details[open] {
+  --flow-space: var(--size-400);
+  border: 1px solid var(--color-primary-dark);
+}
+
+details[open]:focus-within {
+  outline: 2px dashed;
+  outline-offset: 3px;
+}
+
+details[open] > summary:focus {
+  outline: none;
+}

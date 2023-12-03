@@ -1,0 +1,61 @@
+.flexbox-grid {
+  --min: 40ch;
+  --gap: var(--size-4);
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+
+.fluid-grid {
+  display: grid;
+  --min: 20ch;
+}
+.fluid-grid.two {
+  --gap: var(--size-700);
+  column-gap: var(--size-900);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.flexbox-grid > * {
+  flex: 1 1 var(--min);
+  padding-inline-end: var(--size-8);
+}
+
+.flex-row {
+  display: flex;
+  gap: var(--size-7);
+  width: 100%;
+  /* max-width: var(--size-content-3); */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.flex-row > div {
+  width: 100%;
+  text-align: center;
+  border-radius: var(--radius-3);
+  border: var(--border-size-2) var(--green-2) solid;
+  /* background: var(--green-2); */
+  padding: var(--size-3);
+  flex: 1 1 var(--size-content-1);
+  max-width: var(--size-content-2);
+}
+
+.flex-row > :not(div) {
+  max-width: var(--size-content-2);
+  width: 100%;
+  align-self: flex-start;
+}
+
+.flex-row > div:not(.share) > p:first-of-type {
+  font-weight: 600;
+  background: var(--green-1);
+  color: var(--gray-9);
+  font-size: 1.25rem;
+  border-radius: var(--radius-2);
+  --flow-space: var(--size-4);
+  /* font-size: var(--body-fluid-size-small);  */
+  /* font-weight: var(--font-weight-bold); */
+}

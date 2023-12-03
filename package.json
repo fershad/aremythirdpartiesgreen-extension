@@ -1,0 +1,35 @@
+{
+  "name": "amtpg-crx",
+  "version": "0.1.0",
+  "author": "Fershad Irani",
+  "description": "",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "chrome-extension",
+    "svelte",
+    "vite",
+    "create-chrome-ext"
+  ],
+  "engines": {
+    "node": ">=14.18.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "fmt": "prettier --write '**/*.{svelte,js,json,css,scss,md}'"
+  },
+  "dependencies": {
+    "open-props": "^1.6.13"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.0.0-beta.19",
+    "@sveltejs/vite-plugin-svelte": "2.4.6",
+    "prettier": "^3.0.3",
+    "prettier-plugin-svelte": "^3.0.3",
+    "svelte": "^4.2.1",
+    "svelte-preprocess": "^5.0.4",
+    "vite": "^4.4.11"
+  }
+}

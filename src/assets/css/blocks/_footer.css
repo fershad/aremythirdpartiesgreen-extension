@@ -1,0 +1,28 @@
+footer {
+  background-color: var(--color-dark);
+  color: var(--light-text);
+  /* margin-top: 4rem; */
+  min-height: 10vh;
+  padding: var(--size-600) 0;
+}
+
+footer nav ul {
+  display: flex;
+  justify-content: center;
+  --gap: var(--size-300);
+  flex-wrap: wrap;
+  margin: calc(-1 * var(--gap)) 0 0 calc(-1 * var(--gap));
+  width: calc(100% + var(--gap));
+}
+
+footer nav ul > * {
+  margin: var(--gap);
+}
+
+footer a[target="_blank"]:after,
+footer a[data-target="external"]:after {
+  height: 2ex;
+  width: 2ex;
+  background-size: 2ex;
+  filter: invert(1);
+}

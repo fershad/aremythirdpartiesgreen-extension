@@ -1,0 +1,105 @@
+a,
+a:visited {
+  text-shadow: -1px -1px 0 var(--link-shadow-color, var(--background-color)),
+    1px -1px 0 var(--link-shadow-color, var(--background-color)),
+    -1px 1px 0 var(--link-shadow-color, var(--background-color)),
+    1px 1px 0 var(--link-shadow-color, var(--background-color));
+  color: currentColor;
+  background-image: linear-gradient(
+      90deg,
+      var(--link-gradient-end, var(--background-color)),
+      var(--link-gradient-end, var(--background-color))
+    ),
+    linear-gradient(
+      90deg,
+      var(--link-gradient-start, var(--secondary-color)),
+      var(--link-gradient-start, var(--secondary-color))
+    );
+  background-repeat: no-repeat;
+  background-position: -100% 105%, 0% 105%;
+  background-size: 0px 0.35ex, 100% 0.35ex;
+  text-decoration: none;
+  transition: background-size 0.4s ease-in;
+  font-weight: bold;
+}
+
+a:hover,
+a:focus {
+  /* color: var(--green); */
+  background-repeat: no-repeat;
+  background-position: 0% 105%, 0% 105%;
+  background-size: 100% 0.35ex, 100% 0.35ex;
+  text-decoration: none;
+}
+
+/* header a,
+header a:visited,
+footer a,
+footer a:visited {
+  background-image: linear-gradient(90deg, var(--color-dark), var(--color-dark)),
+    linear-gradient(90deg, var(--secondary-color), var(--secondary-color));
+  text-shadow: -1px -1px 0 var(--color-dark), 1px -1px 0 var(--color-dark),
+    -1px 1px 0 var(--color-dark), 1px 1px 0 var(--color-dark);
+} */
+
+a.button,
+a.cta {
+  background-image: none;
+  text-shadow: none;
+}
+
+a[href]:not([href*="aremythirdpartiesgreen.com"], [href*="localhost"], [href*="#"], [href*="pages.dev"]),
+a[data-target="external"] {
+  --external-uri: url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img'%3E%3Cg fill='%23f8f9fa'%3E%3Cpath d='M69.37 54.11v25.83a2.61 2.61 0 01-2.6 2.6H20a2.61 2.61 0 01-2.6-2.6v-46.8a2.61 2.61 0 012.6-2.6h31.49V24H14.12a3.26 3.26 0 00-3.25 3.25v58.5A3.26 3.26 0 0014.12 89h58.5a3.26 3.26 0 003.25-3.25V54.11z'/%3E%3Cpath d='M50.75 54.85l30.62-30.62V51a3.91 3.91 0 003.9 3.89A3.86 3.86 0 0089.13 51V14.88A3.86 3.86 0 0085.27 11H49.13a3.87 3.87 0 100 7.73h26.76L45.26 49.37a3.88 3.88 0 105.49 5.48z'/%3E%3C/g%3E%3C/svg%3E");
+  position: relative;
+}
+
+/* footer
+a[href]:not([href*="fershad.com"], [href*="localhost"], [href*="#"], [href*="pages.dev"]) {
+  --external-uri: url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img'%3E%3Cg fill='%23f4f9f4' %3E%3Cpath d='M69.37 54.11v25.83a2.61 2.61 0 01-2.6 2.6H20a2.61 2.61 0 01-2.6-2.6v-46.8a2.61 2.61 0 012.6-2.6h31.49V24H14.12a3.26 3.26 0 00-3.25 3.25v58.5A3.26 3.26 0 0014.12 89h58.5a3.26 3.26 0 003.25-3.25V54.11z'/%3E%3Cpath d='M50.75 54.85l30.62-30.62V51a3.91 3.91 0 003.9 3.89A3.86 3.86 0 0089.13 51V14.88A3.86 3.86 0 0085.27 11H49.13a3.87 3.87 0 100 7.73h26.76L45.26 49.37a3.88 3.88 0 105.49 5.48z'/%3E%3C/g%3E%3C/svg%3E");
+} */
+
+a[href]:not([href*="aremythirdpartiesgreen.com"], [href*="localhost"], [href*="#"], [href*="pages.dev"], [data-internal]):after,
+a[data-target="external"]:after {
+  background: transparent var(--external-uri) 0 0 no-repeat;
+  background-size: 16px;
+  content: "";
+  display: inline-block;
+  height: 16px;
+  margin-left: 0.5ch;
+  width: 16px;
+}
+
+figcaption a {
+  --link-gradient-start: var(--background-color);
+  --link-gradient-end: var(--secondary-color);
+}
+
+figcaption a[data-target="external"]:after {
+  --external-uri: url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img'%3E%3Cg fill='%23212529'%3E%3Cpath d='M69.37 54.11v25.83a2.61 2.61 0 01-2.6 2.6H20a2.61 2.61 0 01-2.6-2.6v-46.8a2.61 2.61 0 012.6-2.6h31.49V24H14.12a3.26 3.26 0 00-3.25 3.25v58.5A3.26 3.26 0 0014.12 89h58.5a3.26 3.26 0 003.25-3.25V54.11z'/%3E%3Cpath d='M50.75 54.85l30.62-30.62V51a3.91 3.91 0 003.9 3.89A3.86 3.86 0 0089.13 51V14.88A3.86 3.86 0 0085.27 11H49.13a3.87 3.87 0 100 7.73h26.76L45.26 49.37a3.88 3.88 0 105.49 5.48z'/%3E%3C/g%3E%3C/svg%3E");
+  /* background-position: 0 -16px; */
+}
+
+.cta {
+  border-radius: 5px;
+  /* font-size: var(--size-4); */
+  font-weight: 600;
+  font-family: var(--heading-font);
+  padding: var(--size-2) var(--size-3);
+  margin: 0;
+  cursor: pointer;
+  background-color: var(--cta-color, var(--primary-color));
+  /* border: 2px solid var(--text-color); */
+  border: none;
+  /* max-width: 15ch; */
+  /* width: 100%; */
+  /* flex: 1 1 15ch; */
+  --link-shadow-color: var(--cta-color, var(--primary-color));
+}
+
+.cta:hover,
+.cta:focus {
+  background-color: var(--green-1);
+  color: var(--gray-9);
+  /* border: 2px solid var(--primary-color); */
+}

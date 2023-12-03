@@ -1,0 +1,55 @@
+#writing-nav > ul {
+  display: grid;
+  justify-content: flex-start;
+  --gap: var(--size-300);
+  flex-wrap: nowrap;
+  width: calc(100% + var(--gap));
+  margin: calc(-1 * var(--gap)) 0 0 calc(-1 * var(--gap));
+  padding: 0;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+}
+
+#writing-nav {
+  overflow: hidden;
+  overflow-x: auto;
+  scrollbar-width: 0.5rem;
+  scrollbar-color: var(--color-charcoal) transparent;
+  padding: var(--size-300) 0;
+  margin-bottom: var(--size-300);
+}
+
+#writing-nav a.current {
+  text-shadow: none;
+  background-image: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+#writing-nav::-webkit-scrollbar {
+  height: 0.5rem;
+}
+
+#writing-nav::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+#writing-nav::-webkit-scrollbar-thumb {
+  background-color: var(--color-charcoal);
+}
+
+#writing-nav::-webkit-scrollbar-track,
+#writing-nav::-webkit-scrollbar-thumb_ {
+  border-radius: 5px;
+}
+
+#writing-nav > ul > * {
+  margin: var(--gap);
+  display: inline-block;
+}
+
+@media (min-width: 62rem) {
+  #writing-nav > ul {
+    justify-content: center;
+  }
+}

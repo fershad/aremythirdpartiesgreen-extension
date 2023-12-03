@@ -1,0 +1,13 @@
+.tags svg {
+  height: 2ex;
+  width: auto;
+  margin-right: var(--size-300);
+}
+
+.tags span.pill {
+  width: max-content;
+  font-size: var(--size-300);
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+}

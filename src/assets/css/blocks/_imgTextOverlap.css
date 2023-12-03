@@ -1,0 +1,178 @@
+.imageTextOverlap {
+  display: grid;
+  grid-template-rows: minmax(1fr, 15rem) minmax(0, auto) var(--size-500);
+  grid-template-columns: minmax(15rem, 1fr);
+  margin-bottom: var(--size-500);
+}
+
+.imageTextOverlap.title {
+  margin-bottom: calc(var(--size-700) * -1);
+}
+
+.imageTextOverlap > * {
+  grid-column: 1;
+}
+
+.imageTextOverlap .media {
+  grid-row: 1;
+  position: relative;
+}
+
+.imageTextOverlap .media img {
+  width: 100%;
+  height: 100%;
+  max-height: 15rem;
+  object-fit: cover;
+}
+
+.imageTextOverlap .content {
+  --flow-space: var(--size-300);
+  grid-row: 2;
+  z-index: 1;
+}
+
+.imageTextOverlap .content > p {
+  max-width: 75ch;
+  background-color: var(--background-color);
+}
+
+.imageTextOverlap .content > *:first-child {
+  margin-top: var(--size-600);
+}
+
+.imageTextOverlap .content > time {
+  font-size: var(--size-300);
+  display: inline-block;
+}
+
+.imageTextOverlap .content > .postInfo {
+  font-size: var(--size-300);
+}
+
+@media (min-width: 36rem) {
+  .imageTextOverlap:not(.title) {
+    grid-template-rows: var(--size-700) auto;
+    grid-template-columns: minmax(15rem, 1fr) 5rem 2fr;
+    grid-gap: var(--size-900);
+  }
+
+  .imageTextOverlap:not(.title) .media {
+    grid-column: 3/1;
+    grid-row: 1/5;
+  }
+
+  .imageTextOverlap:not(.title)[data-narrow="true"] .media {
+    grid-column: 3/1;
+    grid-row: 1/4;
+  }
+
+  .imageTextOverlap:not(.title) .content {
+    margin-left: var(--size-500);
+    grid-row: 2/4;
+    grid-column: 2/4;
+    margin-top: calc(var(--size-500) * -1);
+    background-color: var(--background-color);
+  }
+
+  .imageTextOverlap:not(.title) .content > p {
+    padding: 0.45rem 0.45rem 0.45rem var(--size-500);
+  }
+
+  .imageTextOverlap:not(.title) .content > .heading,
+  .imageTextOverlap:not(.title) .content > .tags,
+  .imageTextOverlap:not(.title) .content > .postInfo,
+  .imageTextOverlap:not(.title) .content > aside {
+    padding-left: var(--size-500);
+  }
+
+  .imageTextOverlap:not(.title) .content > a {
+    margin-left: var(--size-500);
+  }
+
+  .imageTextOverlap:not(.title).staggered:nth-child(odd) {
+    grid-template-columns: 2fr 5rem minmax(15rem, 1fr);
+  }
+
+  .imageTextOverlap:not(.title).staggered:nth-child(odd) .media {
+    grid-column: 4/2;
+  }
+
+  .imageTextOverlap:not(.title).staggered:nth-child(odd) .content {
+    grid-column: 1/3;
+  }
+
+  .imageTextOverlap[data-reversed].staggered:nth-child(even) {
+    grid-template-columns: 2fr 5rem minmax(15rem, 1fr);
+  }
+
+  .imageTextOverlap[data-reversed].staggered:nth-child(even) .media {
+    grid-column: 4/2;
+  }
+
+  .imageTextOverlap[data-reversed].staggered:nth-child(even) .content {
+    grid-column: 1/3;
+  }
+
+  .imageTextOverlap[data-reversed].staggered:nth-child(odd) {
+    grid-template-columns: minmax(15rem, 1fr) 5rem 2fr;
+  }
+
+  .imageTextOverlap[data-reversed].staggered:nth-child(odd) .media {
+    grid-column: 1/3;
+  }
+
+  .imageTextOverlap[data-reversed].staggered:nth-child(odd) .content {
+    grid-column: 4/2;
+  }
+}
+
+@media (min-width: 62rem) {
+  .imageTextOverlap.title {
+    grid-template-rows: var(--size-700) auto;
+    grid-template-columns: minmax(15rem, 1fr) 5rem 2fr;
+    grid-gap: var(--size-900);
+    margin-bottom: calc(var(--size-900) * -1);
+  }
+
+  .imageTextOverlap.title .media {
+    grid-column: 3/1;
+    grid-row: 1/5;
+  }
+
+  .imageTextOverlap.title[data-narrow="true"] .media {
+    grid-column: 3/1;
+    grid-row: 1/4;
+  }
+
+  .imageTextOverlap.title .content {
+    /* margin-left: var(--size-500); */
+    grid-row: 2/4;
+    grid-column: 2/4;
+    margin-top: calc(var(--size-500) * -1);
+    background-color: var(--background-color);
+  }
+
+  .imageTextOverlap.staggered:nth-child(odd) {
+    grid-template-columns: 2fr 5rem minmax(15rem, 1fr);
+  }
+
+  .imageTextOverlap.staggered:nth-child(odd) .media {
+    grid-column: 4/2;
+  }
+
+  .imageTextOverlap.staggered:nth-child(odd) .content {
+    grid-column: 1/3;
+  }
+}
+
+.full-width[data-highlighted="accent"] .imageTextOverlap {
+  --background-color: var(--color-accent);
+}
+
+.full-width[data-highlighted="dark"] .imageTextOverlap {
+  --background-color: var(--color-primary-dark);
+}
+
+.imageTextOverlap:last-of-type {
+  margin-bottom: 0;
+}

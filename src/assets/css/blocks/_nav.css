@@ -1,0 +1,20 @@
+nav ul li {
+  display: inline-block;
+  margin-left: var(--size-400);
+}
+
+nav ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+nav ul[data-space="around"] {
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  color: currentColor;
+}

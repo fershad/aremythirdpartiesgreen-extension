@@ -1,0 +1,11 @@
+/**
+ * FLOW
+ * Applies a margin to sibling elements based on a --flow-space custom property.
+ */
+.flow > *:not(hr) + *:not(hr) {
+  margin-top: var(--flow-space, var(--size-5));
+}
+
+section > * {
+  --flow-space: var(--size-6);
+}

@@ -1,0 +1,17 @@
+.toc nav ul li {
+  display: list-item;
+}
+
+.toc nav ul {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.toc h2 {
+  display: inline;
+}
+
+.toc {
+  --flow-space: var(--size-300);
+}

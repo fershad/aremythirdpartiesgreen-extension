@@ -1,0 +1,213 @@
+/* Typography */
+p {
+  margin-bottom: 1.15rem;
+  max-width: 75ch;
+}
+
+blockquote {
+  margin: var(--size-400) 0 var(--size-400) 0;
+  max-width: 75ch;
+  padding-left: var(--size-400);
+  border-left: 10px solid black;
+  color: black;
+  font-style: italic;
+}
+
+@media (min-width: 48rem) {
+  blockquote {
+    margin-left: var(--size-800);
+  }
+}
+
+li {
+  max-width: 75ch;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+.xl {
+  font-weight: 900;
+  font-family: var(--heading-font);
+  line-height: 1.45;
+  letter-spacing: 0.4px;
+  word-spacing: 0px;
+  max-width: 75ch;
+  margin: var(--size-300) 0;
+}
+
+h1,
+.h1 {
+  margin-top: 0;
+  font-size: var(--size-700);
+  position: relative;
+  /* padding-bottom: 3rem; */
+  margin-bottom: 2rem;
+  line-height: 1.15;
+}
+
+.subtag {
+  font-size: var(--size-500);
+  /* font-weight: 900; */
+  /* font-size: var(--size-00); */
+  color: var(--color-dark);
+  font-family: var(--base-font);
+}
+
+h2,
+.h2 {
+  font-size: var(--size-600);
+}
+
+h3,
+.h3 {
+  font-size: var(--size-500);
+}
+
+h4,
+.h4 {
+  font-size: var(--size-450);
+}
+
+h5,
+.h5 {
+  font-size: var(--size-400);
+}
+
+@media (min-width: 36rem) {
+  h1,
+  .h1 {
+    font-size: var(--size-800);
+  }
+
+  .subtag {
+    font-size: var(--size-600);
+  }
+
+  h2,
+  .h2 {
+    font-size: var(--size-700);
+  }
+
+  h3,
+  .h3 {
+    font-size: var(--size-600);
+  }
+
+  h4,
+  .h4 {
+    font-size: var(--size-500);
+  }
+
+  h5,
+  .h5 {
+    font-size: var(--size-450);
+  }
+}
+
+@media (min-width: 48rem) {
+  h1,
+  .h1 {
+    font-size: var(--size-900);
+  }
+
+  h2,
+  .h2 {
+    font-size: var(--size-800);
+  }
+
+  h3,
+  .h3 {
+    font-size: var(--size-700);
+  }
+
+  h4,
+  .h4 {
+    font-size: var(--size-600);
+  }
+}
+
+.xl {
+  margin-top: var(--size-500);
+  font-size: clamp(var(--size-800), var(--size-900), var(--size-xxl));
+  position: relative;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  color: var(--text-color);
+}
+
+.heading {
+  font-family: var(--heading-font);
+  font-weight: 900;
+}
+
+small,
+.small {
+  font-size: var(--size-300);
+}
+
+b,
+strong,
+.bold {
+  font-weight: bolder;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-center > p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+[data-color="light"] {
+  color: var(--light-text);
+}
+
+[data-color="text"] {
+  color: var(--text-color);
+}
+
+[data-color="primary-light"] {
+  color: var(--color-primary-light);
+}
+[data-color="primary"] {
+  color: var(--color-primary);
+}
+[data-color="primary-dark"] {
+  color: var(--color-primary-dark);
+}
+[data-color="accent-light"] {
+  color: var(--color-accent-light);
+}
+[data-color="accent"] {
+  color: var(--color-accent);
+}
+[data-color="accent-dark"] {
+  color: var(--color-accent-dark);
+}
+/* End Typography */

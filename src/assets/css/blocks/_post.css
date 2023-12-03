@@ -1,0 +1,84 @@
+.post h1 {
+  margin-bottom: 0;
+}
+
+.post h1 + aside {
+  margin-bottom: var(--size-600);
+  margin-top: var(--size-500);
+  padding: var(--size-600) var(--size-400);
+  border-top: 0.25rem solid var(--color-primary);
+  border-bottom: 0.25rem solid var(--color-primary);
+  grid-column: 1;
+  height: 100%;
+  height: max-content;
+}
+
+.post h1 + aside ul {
+  list-style: disc;
+}
+
+.post h1 + aside ul li {
+  margin-left: var(--size-700);
+}
+
+.post {
+  line-height: 1.75;
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+.post figure {
+  position: relative;
+  margin: var(--size-600) 0 var(--size-800) 0;
+}
+
+.post figure figcaption {
+  font-size: var(--size-300);
+  background-color: var(--background-color);
+  padding: var(--size-300);
+  text-align: center;
+  position: absolute;
+  bottom: calc(var(--size-600) * -1);
+  left: 0;
+}
+
+.post figure img {
+  width: 100%;
+  height: auto;
+  object-fit: scale-down;
+}
+
+.post h1 {
+  grid-column: 1;
+}
+
+.post > div:first-child {
+  grid-column: 1;
+}
+
+@media (min-width: 72rem) {
+  /* .post aside {
+    grid-column: 2;
+    grid-row: 1;
+  } */
+
+  .post {
+    grid-template-columns: minmax(auto, 75ch) 1fr;
+    column-gap: var(--size-500);
+  }
+
+  .post h1 + aside {
+    grid-column: 2/3;
+    grid-row: 2;
+  }
+
+  .post h1 {
+    grid-column: -1/1;
+    grid-row: 1;
+  }
+
+  .post > div:first-child {
+    grid-column: -1/1;
+    grid-row: 2;
+  }
+}

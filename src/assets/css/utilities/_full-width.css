@@ -1,0 +1,102 @@
+.full-width {
+  margin-left: calc(var(--size-400) * -1);
+  margin-right: calc(var(--size-400) * -1);
+  padding: var(--size-400) var(--size-600) var(--size-600) var(--size-600);
+}
+
+.full-width.vertical-space {
+  margin-top: var(--size-800);
+  margin-bottom: var(--size-600);
+}
+
+@media (min-width: 62rem) {
+  .full-width {
+    grid-column: -1/1;
+  }
+}
+
+.full-width[data-highlighted="light"] {
+  background-color: var(--color-primary-light);
+  color: var(--color-dark);
+}
+
+.full-width[data-highlighted="dark"] {
+  background-color: var(--color-primary-dark);
+  color: var(--light-text);
+}
+
+.full-width[data-highlighted="accent"] {
+  background-color: var(--color-accent);
+  color: var(--dark-text);
+}
+
+.full-width[data-highlighted="accent-light"] {
+  background-color: var(--color-accent-light);
+  color: var(--dark-text);
+}
+
+.full-width[data-highlighted="accent"] a,
+.full-width[data-highlighted="accent"] a:visited {
+  text-shadow: -1px -1px 0 var(--color-accent), 1px -1px 0 var(--color-accent),
+    -1px 1px 0 var(--color-accent), 1px 1px 0 var(--color-accent);
+  color: currentColor;
+  background-image: linear-gradient(
+      90deg,
+      var(--color-accent),
+      var(--color-accent)
+    ),
+    linear-gradient(90deg, var(--dark-text), var(--dark-text));
+  background-repeat: no-repeat;
+  background-position: -100% 105%, 0% 105%;
+  background-size: 0px 0.35ex, 100% 0.35ex;
+  text-decoration: none;
+  transition: background-size 0.4s ease-in;
+}
+
+.full-width[data-highlighted="accent"] a:hover,
+.full-width[data-highlighted="accent"] a:focus {
+  /* color: var(--green); */
+  background-repeat: no-repeat;
+  background-position: 0% 105%, 0% 105%;
+  background-size: 100% 0.35ex, 100% 0.35ex;
+  text-decoration: none;
+}
+
+.full-width .button.pill[data-color="primary-dark"] {
+  background: var(--color-primary-dark);
+  color: var(--light-text);
+  background-image: none;
+  text-shadow: none;
+}
+
+.full-width[data-highlighted="dark"] a,
+.full-width[data-highlighted="dark"] a:visited {
+  text-shadow: -1px -1px 0 var(--color-primary-dark),
+    1px -1px 0 var(--color-primary-dark), -1px 1px 0 var(--color-primary-dark),
+    1px 1px 0 var(--color-primary-dark);
+  color: currentColor;
+  background-image: linear-gradient(
+      90deg,
+      var(--color-primary-dark),
+      var(--color-primary-dark)
+    ),
+    linear-gradient(90deg, var(--color-accent-dark), var(--color-accent-dark));
+  background-repeat: no-repeat;
+  background-position: -100% 105%, 0% 105%;
+  background-size: 0px 0.35ex, 100% 0.35ex;
+  text-decoration: none;
+  transition: background-size 0.4s ease-in;
+}
+
+.full-width[data-highlighted="dark"] a:hover,
+.full-width[data-highlighted="dark"] a:focus {
+  /* color: var(--green); */
+  background-repeat: no-repeat;
+  background-position: 0% 105%, 0% 105%;
+  background-size: 100% 0.35ex, 100% 0.35ex;
+  text-decoration: none;
+}
+
+.full-width[data-highlighted="accent"] blockquote {
+  border-left: 1rem solid var(--color-primary-dark);
+}

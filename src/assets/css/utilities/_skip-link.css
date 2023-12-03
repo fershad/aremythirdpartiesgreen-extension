@@ -1,0 +1,31 @@
+.skip-link {
+  --link-shadow-color: var(--primary-color);
+  position: absolute;
+  top: auto;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  font-size: 1.125rem;
+  font-weight: bold;
+  white-space: nowrap;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  background-image: none;
+}
+
+.skip-link:focus {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  width: auto;
+  height: auto;
+  display: inline-block;
+  z-index: 12;
+  background-color: var(--primary-color);
+  border: solid 2px var(--primary-color);
+  color: var(--text-color);
+  outline-color: var(--text-color);
+}
