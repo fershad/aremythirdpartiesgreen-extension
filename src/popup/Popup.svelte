@@ -217,7 +217,13 @@
           >Directory</a
         >
       </li>
-      <li>Found a bug?</li>
+      <li>
+        <a
+          href="https://github.com/fershad/aremythirdpartiesgreen-chrome-extension"
+          rel="noopener"
+          target="_blank">Found a bug?</a
+        >
+      </li>
     </ul>
     <small>
       Made in 🇹🇼 by <a href="https://www.fershad.com" rel="noopener" target="_blank"
