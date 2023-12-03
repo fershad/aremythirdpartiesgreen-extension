@@ -1,6 +1,8 @@
-# amtpg-crx
+# Are my third parties green? - Chrome Extension
 
-> a chrome extension tools built with Vite + Svelte, and Manifest v3
+A chrome extension to extend the usability of the [Are my third parties green?](http://aremythirdpartiesgreen.com) website testing tools.
+
+Check any web page to see if the third-party services being used are being served from verified green web hosts.
 
 ## Installing
 
@@ -13,9 +15,9 @@
 run the command
 
 ```shell
-$ cd amtpg-crx
+cd amtpg-crx
 
-$ npm run dev
+npm run dev
 ```
 
 ### Chrome Extension Developer Mode
@@ -34,7 +36,7 @@ $ npm run dev
 After the development of your extension run the command
 
 ```shell
-$ npm run build
+npm run build
 ```
 
 Now, the content of `build` folder will be the extension ready to be submitted to the Chrome Web Store. Just take a look at the [official guide](https://developer.chrome.com/webstore/publish) to more infos about publishing.

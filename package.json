@@ -2,7 +2,7 @@
   "name": "amtpg-crx",
   "version": "0.1.0",
   "author": "Fershad Irani",
-  "description": "",
+  "description": "Check any web page to see if the third-party services being used are being served from verified green web hosts.",
   "type": "module",
   "license": "MIT",
   "keywords": [
