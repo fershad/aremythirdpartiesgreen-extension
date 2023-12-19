@@ -1,5 +1,6 @@
 <script>
   import '../assets/css/index.css'
+  import ext from '../utils/ext.js'
 
   let filteredUrls
   let resourceUrls
@@ -11,7 +12,7 @@
     [...new Set(resourceUrls?.map((resource) => new URL(resource.url).hostname))] || null
 
   const getActiveTab = () => {
-    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    ext.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       const activeTab = tabs[0]
       logNewResourceEntries(activeTab.id)
     })
@@ -33,12 +34,12 @@
   }
 
   const logNewResourceEntries = async (tabId) => {
-    const tab = await chrome.tabs.get(tabId)
+    const tab = await ext.tabs.get(tabId)
     thisURL = tab.url
     const currentHost = new URL(tab.url).hostname
     currentDomain = currentHost
     // Use the performance timing API to get all the loaded resources from the active tab
-    const resourceEntries = await chrome.scripting.executeScript({
+    const resourceEntries = await ext.scripting.executeScript({
       target: { tabId },
       function: () => {
         const resourceEntries = performance.getEntriesByType('resource')
@@ -91,7 +92,7 @@
   }
 </script>
 
-<main>
+<main class="sidepanel">
   <section id="intro" class="flow">
     <div class="text-center">
       <h2>Are my third parties green?</h2>
@@ -225,7 +226,6 @@
 </main>
 <footer>
   <div class="text-center flow">
-    <p>Are my parties green?</p>
     <ul>
       <li>
         <a href="https://aremythirdpartiesgreen.com" rel="noopener" target="_blank">Website</a>
@@ -239,7 +239,7 @@
         <a
           href="https://github.com/fershad/aremythirdpartiesgreen-chrome-extension"
           rel="noopener"
-          target="_blank">Found a bug?</a
+          target="_blank">Bug/Feature request</a
         >
       </li>
     </ul>
@@ -317,8 +317,8 @@
     grid-template-columns: 2ex 1fr;
   }
 
-  :global(body) {
-    min-width: 34rem;
+  :global(body:has(main.sidepanel)) {
+    width: 100%;
     margin: 0;
   }
 

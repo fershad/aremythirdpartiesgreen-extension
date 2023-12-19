@@ -1,5 +1,6 @@
 <script>
   import '../assets/css/index.css'
+  import ext from '../utils/ext.js'
 
   let filteredUrls
   let resourceUrls
@@ -11,7 +12,7 @@
     [...new Set(resourceUrls?.map((resource) => new URL(resource.url).hostname))] || null
 
   const getActiveTab = () => {
-    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    ext.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       const activeTab = tabs[0]
       logNewResourceEntries(activeTab.id)
     })
@@ -33,14 +34,14 @@
   }
 
   const logNewResourceEntries = async (tabId) => {
-    const tab = await chrome.tabs.get(tabId)
+    const tab = await ext.tabs.get(tabId)
     thisURL = tab.url
     const currentHost = new URL(tab.url).hostname
     currentDomain = currentHost
     // Use the performance timing API to get all the loaded resources from the active tab
     const resourceEntries = await chrome.scripting.executeScript({
       target: { tabId },
-      function: () => {
+      func: () => {
         const resourceEntries = performance.getEntriesByType('resource')
         return resourceEntries.map((entry) => ({
           url: entry.name,
@@ -153,7 +154,7 @@
                     <!-- promise was fulfilled -->
                     {filtered?.filter((url) => url.green).length} requests ({Math.round(
                       (filtered?.filter((url) => url.green).length / filtered?.length) * 100,
-                    )}%)
+                    ) || 0}%)
                   {/await}
                 </p>
               </div>
@@ -225,7 +226,6 @@
 </main>
 <footer>
   <div class="text-center flow">
-    <p>Are my parties green?</p>
     <ul>
       <li>
         <a href="https://aremythirdpartiesgreen.com" rel="noopener" target="_blank">Website</a>
@@ -239,7 +239,7 @@
         <a
           href="https://github.com/fershad/aremythirdpartiesgreen-chrome-extension"
           rel="noopener"
-          target="_blank">Found a bug?</a
+          target="_blank">Bug/Feature request</a
         >
       </li>
     </ul>
