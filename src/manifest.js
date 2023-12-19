@@ -37,6 +37,6 @@ export default defineManifest({
       matches: [],
     },
   ],
-  permissions: ['sidePanel', 'storage', "tabs",  "scripting",  "activeTab", "webNavigation"],
-  host_permissions: ['http://*/*', 'https://*/*'],
+  permissions: ['sidePanel', "tabs",  "scripting",  "activeTab"],
+  host_permissions: ['<all_urls>'],
 })

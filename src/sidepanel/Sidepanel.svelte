@@ -5,6 +5,7 @@
   let resourceUrls
   let allDomains
   let currentDomain
+  let thisURL
 
   $: allDomains =
     [...new Set(resourceUrls?.map((resource) => new URL(resource.url).hostname))] || null
@@ -33,6 +34,7 @@
 
   const logNewResourceEntries = async (tabId) => {
     const tab = await chrome.tabs.get(tabId)
+    thisURL = tab.url
     const currentHost = new URL(tab.url).hostname
     currentDomain = currentHost
     // Use the performance timing API to get all the loaded resources from the active tab
@@ -51,9 +53,16 @@
     // Filter out the current host from the list of resources and remove duplicates
     filteredUrls = Promise.all(
       [...new Set(resourceUrls)]
-        .filter((resource) => new URL(resource.url).hostname !== currentHost)
+        .filter(
+          (resource) =>
+            new URL(resource.url).hostname !== currentHost &&
+            !resource.url.startsWith('data:') &&
+            !new URL(resource.url).hostname.endsWith(currentHost.replace(/^[^.]+\./g, '')),
+        )
         .map((resource) => greenCheck(resource)),
-    ).then((values) => values)
+    ).then((values) => {
+      return values
+    })
   }
 
   function overallGreen(domain, urls) {
@@ -94,9 +103,18 @@
   {:then domains}
     {#if domains?.length > 0}
       <h3>Summary</h3>
+      <p>For: {thisURL}</p>
       <section id="summary" class="flow highlight">
         <div class="content">
           <div class="flex-row">
+            <div class="block">
+              <p>Domain</p>
+              <div>
+                <p class="emphasis">
+                  {currentDomain}
+                </p>
+              </div>
+            </div>
             <div class="block">
               <p>Total requests</p>
               <div>
