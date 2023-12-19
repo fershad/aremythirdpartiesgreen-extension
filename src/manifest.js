@@ -13,6 +13,12 @@ export default defineManifest({
     48: 'img/logo-48.png',
     128: 'img/logo-128.png',
   },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "aremythirdpartiesgreen@fershad.com",
+      "strict_min_version": "109.0"
+    }
+  },
   action: {
     default_popup: 'popup.html',
     default_icon: 'img/logo-48.png',
