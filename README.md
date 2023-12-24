@@ -1,8 +1,13 @@
 # Are my third parties green? - Chrome Extension
 
-A chrome extension to extend the usability of the [Are my third parties green?](http://aremythirdpartiesgreen.com) website testing tools.
+A Firefox and Chrome extension to extend the usability of the [Are my third parties green?](http://aremythirdpartiesgreen.com) website testing tools.
 
 Check any web page to see if the third-party services being used are being served from verified green web hosts.
+
+## Availability
+
+Available for Firefox here: https://addons.mozilla.org/firefox/addon/are-my-third-parties-green/  
+Available for Chrome here: https://chromewebstore.google.com/detail/are-my-third-parties-gree/pihgiflkcmeaghbmdicclkkagfbiamak  
 
 ## Installing
 
